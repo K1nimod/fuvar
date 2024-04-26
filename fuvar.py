@@ -30,5 +30,5 @@ for sor in lista:
         bevetel += sor.dij
         bevetel += sor.borra
 
-print(f"{db} fuvar alatt: {str(bevetel).replace('.',',')}$")
+print(f"4.feladat: {db} fuvar alatt: {str(bevetel).replace('.',',')}$")
 
