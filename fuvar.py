@@ -4,8 +4,8 @@ class fuvar:
         self.indul = indul
         self.ido = ido
         self.tav = tav
-        self.dij = dij
-        self.borra = borra
+        self.dij = float(dij.replace(',', '.'))
+        self.borra = float(borra.replace(',', '.'))
         self.mod = mod
         
     def __str__(self):
@@ -18,6 +18,17 @@ lista = []
 
 for sor in f:
     sor = sor.strip().split(";")
-    lista.append(fuvar(sor[0],sor[1],sor[2],sor[3],sor[4],sor[5],sor[6],))
+    lista.append(fuvar(sor[0],sor[1],sor[2],sor[3],sor[4],sor[5],sor[6]))
 
 print(f"3.feladat: {len(lista)- 1} fuvar")
+
+db = 0 
+bevetel = 0
+for sor in lista:
+    if sor.azon == '6185':
+        db += 1
+        bevetel += sor.dij
+        bevetel += sor.borra
+
+print(f"{db} fuvar alatt: {str(bevetel).replace('.',',')}$")
+
