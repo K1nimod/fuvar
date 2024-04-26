@@ -20,7 +20,7 @@ for sor in f:
     sor = sor.strip().split(";")
     lista.append(fuvar(sor[0],sor[1],sor[2],sor[3],sor[4],sor[5],sor[6]))
 
-print(f"3.feladat: {len(lista)- 1} fuvar")
+print(f"3.feladat: {len(lista)} fuvar")
 
 db = 0 
 bevetel = 0
@@ -31,4 +31,14 @@ for sor in lista:
         bevetel += sor.borra
 
 print(f"4.feladat: {db} fuvar alatt: {str(bevetel).replace('.',',')}$")
+
+fizmod = {}
+for fuvar in lista:
+    if fuvar.mod in fizmod.keys():
+        fizmod[fuvar.mod] += 1
+    else:
+        fizmod[fuvar.mod] = 1
+print("5. feladat:")
+for k,v in fizmod.items():
+    print(f'\t{k}: {v} fuvar')
 
